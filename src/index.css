@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* Font */
+  --font-sans: 'Inter', sans-serif;
+  --font-island: 'Island Moments', cursive;
+
+  /* ORANGE */
+  --color-primary-orange: #ff7a18;
+  --color-soft-orange: #ffb066;
+  --color-light-orange: #ffe1c4;
+  --color-dark-orange: #c95400;
+
+  /* BROWN */
+  --color-brown: #62422e;
+
+  /* PINK */
+  --color-primary-pink: #ff4f9a;
+  --color-soft-pink: #ff9ac7;
+  --color-light-pink: #ffe1ee;
+  --color-dark-pink: #b0005a;
+
+  /* BLUE */
+  --color-primary-blue: #1e88e5;
+  --color-soft-blue: #64b5f6;
+  --color-light-blue: #e3f2fd;
+  --color-dark-blue: #0d47a1;
+
+  /* NEUTRALS */
+  --color-white: #ffffff;
+  --color-soft-gray: #f3f4f6;
+  --color-charcoal: #1f2937;
+  --color-dark-gray: #4b5563;
+  --color-muted-gray: #9ca3af;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+}
