@@ -12,7 +12,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 right-0 w-full bg-white shadow-lg">
+    <nav className="fixed top-0 right-0 w-full bg-white shadow-lg z-50">
       <div className="container flex items-center justify-between h-24 font-medium">
         {/* Logo */}
         <h1 className="font-island text-[40px] text-primary-orange cursor-pointer">
@@ -20,7 +20,7 @@ const Navbar = () => {
         </h1>
 
         {/* Desktop - links */}
-        <div className="hidden md:flex items-center gap-2 md:gap-4 lg:gap-8 ">
+        <div className="hidden md:flex items-center gap-2 lg:gap-10 ">
           {navLinks.map((item) => (
             <NavLink
               key={item.path}
@@ -35,12 +35,21 @@ const Navbar = () => {
         </div>
 
         {/* Button */}
-        <Link
-          to="/sign-in"
-          className="hidden md:block bg-primary-orange hover:bg-soft-orange transition-all duration-150 px-6 py-2 rounded-lg text-white"
-        >
-          Login
-        </Link>
+        <div className="flex gap-3">
+          <Link
+            to="/sign-in"
+            className="hidden md:block border border-muted-gray hover:text-white hover:bg-primary-orange transition-all duration-150 px-4 py-2 rounded-lg"
+          >
+            Sign In
+          </Link>
+
+          <Link
+            to="/sign-in"
+            className="hidden md:block bg-primary-orange hover:bg-soft-orange transition-all duration-150 px-4 py-2 rounded-lg text-white"
+          >
+            Sign Up
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
@@ -71,9 +80,16 @@ const Navbar = () => {
             {/* Button */}
             <Link
               to="/sign-in"
+              className="text-center border border-muted-gray hover:text-white hover:bg-primary-orange transition-all duration-150 px-6 py-2 rounded-lg"
+            >
+              Sign In
+            </Link>
+
+            <Link
+              to="/sign-up"
               className="text-center bg-primary-orange hover:bg-soft-orange transition-all duration-150 px-6 py-2 rounded-lg text-white"
             >
-              Login
+              Sign Up
             </Link>
           </div>
         </div>

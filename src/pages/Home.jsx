@@ -1,5 +1,11 @@
+import Hero from '../components/Hero';
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <main className='py-24'>
+      <Hero />
+    </main>
+  );
 };
 
 export default Home;

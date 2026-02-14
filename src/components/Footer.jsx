@@ -24,7 +24,7 @@ const Footer = ({ showImage }) => {
       {/* TOp Image */}
 
       {showImage && (
-        <div className="hidden md:block relative overflow-hidden">
+        <div className="relative overflow-hidden">
           <img
             src={footerImage}
             alt="New menu additions"

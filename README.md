@@ -179,10 +179,10 @@ Further screen responsiveness will continue as additional pages are completed.
 The navbar layout was also improved beyond the Figma structure to enhance alignment consistency and user experience.
 
 ## How to Run the Project
-npm install
-npm run dev
+* npm install
+* npm run dev
 
 ### For production build:
-npm run build
-npm run preview
+* npm run build
+* npm run preview
 
