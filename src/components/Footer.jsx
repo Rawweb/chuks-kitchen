@@ -65,7 +65,7 @@ const Footer = ({ showImage }) => {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-2">
-            <h1 className="text-2xl font-medium">Quick Links</h1>
+            <h1 className="text-xl md:text-2xl font-medium">Quick Links</h1>
             <div className="flex flex-col gap-2 text-white/40">
               {footerLinks.pages.map((item, index) => (
                 <NavLink
@@ -83,7 +83,7 @@ const Footer = ({ showImage }) => {
 
           {/* Contact */}
           <div className="flex flex-col gap-2">
-            <h1 className="text-2xl font-medium">Contact Us</h1>
+            <h1 className="text-xl md:text-2xl font-medium">Contact Us</h1>
             <div className="flex flex-col gap-2 text-white/40">
               <p>+234 801 234 5678</p>
               <p>hello@chukskitchen.com</p>
@@ -93,7 +93,7 @@ const Footer = ({ showImage }) => {
 
           {/* Social Links */}
           <div className="flex flex-col gap-2">
-            <h1 className="text-2xl font-medium">Social Links</h1>
+            <h1 className="text-xl md:text-2xl font-medium">Social Links</h1>
 
             <div className="flex flex-col gap-2 text-white/40">
               {footerLinks.social.map((item, index) => (
@@ -104,6 +104,11 @@ const Footer = ({ showImage }) => {
             </div>
           </div>
         </div>
+
+        {/* Copyright */}
+        <p className="container text-sm text-white/40 pb-20">
+          © {new Date().getFullYear()} Lif Media. All righs reserved.
+        </p>
       </div>
     </footer>
   );
