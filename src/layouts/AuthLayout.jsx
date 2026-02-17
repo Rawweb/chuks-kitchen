@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Footer from '../components/Footer';
+import { Outlet, useLocation } from 'react-router-dom';
 
 const AuthLayout = () => {
-  return (
-    <div>AuthLayout</div>
-  )
-}
+  const { pathname } = useLocation();
+  const isWelcomePage = pathname === '/welcome';
 
-export default AuthLayout
+  return (
+    <div className='min-h-screen flex flex-col bg-soft-gray text-charcoal'>
+      {/* Main content */}
+      <main className='flex-1'>
+        <Outlet />
+      </main>
+
+      {/* Hide global footer on welcome page (welcome has its own footer row) */}
+     <Footer />
+    </div>
+  );
+};
+
+export default AuthLayout;
