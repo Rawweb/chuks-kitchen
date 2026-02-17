@@ -13,8 +13,10 @@ const AuthLayout = () => {
         <Outlet />
       </main>
 
-      {/* Hide global footer on welcome page (welcome has its own footer row) */}
-     <Footer />
+      {/* Footer */}
+      <div className='hidden md:block'>
+        <Footer />
+      </div>
     </div>
   );
 };
