@@ -21,13 +21,10 @@ const SignIn = () => {
 
           <div className='absolute inset-0 flex items-center justify-center px-10'>
             <div className='max-w-md text-center text-white'>
-              <h2 className='text-5xl font-island leading-none'>
-                Chuks Kitchen
-              </h2>
-              <p className='mt-4 text-xl font-semibold'>
+              <p className='mt-4 text-5xl font-semibold'>
                 Chuks Kitchen
               </p>
-              <p className='mt-2 text-base leading-relaxed'>
+              <p className='mt-2 text-lg leading-relaxed'>
                 Your journey to delicious, authentic Nigerian meals
                 starts here. Sign up or log in to order your favorites
                 today!
@@ -42,12 +39,12 @@ const SignIn = () => {
             <div className='text-center'>
               <Link
                 to='/'
-                className='font-island text-[34px] text-primary-orange leading-none'
+                className='font-island text-4xl md:text-5xl text-primary-orange leading-none'
               >
                 Chuks Kitchen
               </Link>
-              <h1 className='mt-2 text-4xl font-semibold text-charcoal'>
-                Login your Account
+              <h1 className='mt-2 text-3xl md:text-4xl font-semibold text-charcoal'>
+                Create Your Account
               </h1>
             </div>
 
@@ -151,7 +148,10 @@ const SignIn = () => {
 
             <p className='mt-4 text-center text-xs text-dark-gray'>
               Don&apos;t have an account?{' '}
-              <Link to='/sign-up' className='text-primary-blue hover:text-soft-blue'>
+              <Link
+                to='/sign-up'
+                className='text-primary-blue hover:text-soft-blue'
+              >
                 Create an account
               </Link>
             </p>
