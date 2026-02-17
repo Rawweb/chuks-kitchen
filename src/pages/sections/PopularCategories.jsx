@@ -33,7 +33,11 @@ const PopularCategories = () => {
               image={category.image}
               variant='category'
               onClick={() =>
-                navigate(`/explore?category=${category.title}`)
+                navigate(
+                  `/explore?category=${encodeURIComponent(
+                    category.title
+                  )}`
+                )
               }
             />
           </div>

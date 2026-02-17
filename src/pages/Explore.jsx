@@ -1,8 +1,7 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ExploreHero from '../components/ExploreHero';
 import MealCard from '../components/MealCard';
-import { categories, meals } from '../constants/exploreMeals';
-
+import { categories, meals } from '../constants/mealsDetails';
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -17,8 +16,8 @@ const Explore = () => {
 
   const filteredMeals =
     activeCategory === 'Popular'
-      ? meals.filter((meal) => meal.isPopular)
-      : meals.filter((meal) => meal.category === activeCategory);
+      ? meals.filter((food) => food.isPopular)
+      : meals.filter((food) => food.category === activeCategory);
 
   const handleCategoryClick = (title) => {
     setSearchParams({ category: title });
@@ -28,7 +27,12 @@ const Explore = () => {
     <main className='py-24'>
       <section>
         {/* Heading */}
-        <ExploreHero />
+        <ExploreHero
+          breadcrumbItems={[
+            { label: 'Home', to: '/' },
+            { label: 'Explore' },
+          ]}
+        />
         <div className='container'>
           {/* Menu Categories */}
           <div className='mt-20'>
@@ -36,7 +40,25 @@ const Explore = () => {
               Menu Categories
             </h2>
 
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4'>
+            {/* Mobile Menu Categories */}
+            <div className='md:hidden'>
+              <select
+                aria-label='Select menu category'
+                id='menu-category-select'
+                value={activeCategory}
+                onChange={(e) => handleCategoryClick(e.target.value)}
+                className='w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-charcoal focus:outline-none focus:ring-2 focus:ring-primary-orange'
+              >
+                {categories.map((category) => (
+                  <option key={category.title} value={category.title}>
+                    {category.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Desktop Menu Categories */}
+            <div className='hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-4'>
               {categories.map((category) => (
                 <div
                   key={category.title}
@@ -66,17 +88,17 @@ const Explore = () => {
             </h2>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5'>
-              {filteredMeals.map((meal) => (
+              {filteredMeals.map((food) => (
                 <MealCard
-                  key={meal.id}
-                  title={meal.title}
-                  description={meal.description}
-                  price={meal.price}
-                  image={meal.image}
+                  key={food.id}
+                  title={food.title}
+                  description={food.description}
+                  price={food.price}
+                  image={food.image}
                   variant='explore'
                   onClick={() =>
-                    navigate(`/food/${meal.id}`, {
-                      state: { food: meal },
+                    navigate(`/food-details/${food.id}`, {
+                      state: { food: food },
                     })
                   }
                 />

@@ -33,7 +33,7 @@ const App = () => {
         <Route element={<UserLayout />}>
           <Route index element={<Home />} />
           <Route path="/explore" element={<Explore />} />
-          <Route path="/food/:id" element={<FoodDetails />} />
+          <Route path="/food-details/:id" element={<FoodDetails />} />
         </Route>
 
         {/* Auth */}

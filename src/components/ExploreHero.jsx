@@ -1,7 +1,6 @@
 import exploreImage from '../assets/explore.png';
-import { Search } from 'lucide-react';
 
-const ExploreHero = () => {
+const ExploreHero = ({ breadcrumbItems = [] }) => {
   return (
     <div className='relative'>
       <div className='relative overflow-hidden'>

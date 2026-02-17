@@ -18,6 +18,87 @@ import cat4 from '../assets/treats.png';
 import cat5 from '../assets/beverages.webp';
 import cat6 from '../assets/desserts.webp';
 
+export const chefSpecials = [
+  {
+    id: 'tilapia-pepper-soup',
+    title: 'Spicy Tilapia Pepper Soup',
+    description:
+      'A comforting and spicy soup with tender tilapia fish, a true Nigerian delicacy.',
+    price: '3,500',
+    image: spicy1,
+    proteinOptions: [
+      { name: 'Fresh Tilapia', extra: '(Default)' },
+      { name: 'Cat Fish', extra: '+N500' },
+      { name: 'Goat Meat', extra: '+N700' },
+    ],
+  },
+  {
+    id: 'jollof-rice-fried-chiken',
+    title: 'Jollof Rice & Fried Chicken',
+    description: `Our signature Jollof rice, cooked to perfection, served with succulent fried chicken.`,
+    price: '3,500',
+    image: jollof1,
+    proteinOptions: [
+      { name: 'Fried Chicken', extra: '(Default)' },
+      { name: 'Grilled Fish', extra: '+N500' },
+      { name: 'Beef', extra: '+N700' },
+    ],
+  },
+
+  {
+    id: 'jollof-rice-chiken',
+    title: 'Jollof Rice & Fried Chicken',
+    description: `Our signature Jollof rice, cooked to perfection, served with succulent fried chicken.`,
+    price: '3,500',
+    image: jollof2,
+    proteinOptions: [
+      { name: 'Fried Chicken', extra: '(Default)' },
+      { name: 'Grilled Fish', extra: '+N500' },
+      { name: 'Beef', extra: '+N700' },
+    ],
+  },
+
+  {
+    id: 'jollof-rice-smoked-chiken',
+    title: 'Jollof Rice & Smoked Chicken',
+    description: `Our signature Jollof rice, cooked to perfection, served with succulent fried chicken.`,
+    price: '3,500',
+    image: jollof3,
+    proteinOptions: [
+      { name: 'Smoked Chicken', extra: '(Default)' },
+      { name: 'Turkey', extra: '+N700' },
+      { name: 'Beef', extra: '+N700' },
+    ],
+  },
+
+  {
+    id: 'jollof-rice-plantain',
+    title: 'Jollof Rice & Plantain',
+    description: `Our signature Jollof rice, cooked to perfection, served with succulent fried chicken.`,
+    price: '3,500',
+    image: jollof2,
+    proteinOptions: [
+      { name: 'Fried Chicken', extra: '(Default)' },
+      { name: 'Grilled Fish', extra: '+N500' },
+      { name: 'Beef', extra: '+N700' },
+    ],
+  },
+
+  {
+    id: 'egwusi-soup-pounded-yam',
+    title: 'Egusi Soup & Pounded Yam',
+    description:
+      'Rich and savory Egusi soup with assorted meats, paired with freshly pounded yam.',
+    price: '3,500',
+    image: soup2,
+    proteinOptions: [
+      { name: 'Assorted Meat', extra: '(Default)' },
+      { name: 'Goat Meat', extra: '+N700' },
+      { name: 'Stock Fish', extra: '+N500' },
+    ],
+  },
+];
+
 export const meals = [
   {
     id: 'jollof-rice-fried-chiken',
