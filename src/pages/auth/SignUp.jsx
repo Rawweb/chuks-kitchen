@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
-import { EyeOff, Lock, Mail, Phone } from 'lucide-react';
+import { Eye, EyeOff, Lock, Mail, Phone } from 'lucide-react';
 import signInImage from '../../assets/sign-in.png';
+import { useState } from 'react';
 
 const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState(false);
+
   return (
     <section className='min-h-screen bg-soft-gray'>
       <div className='grid min-h-screen md:grid-cols-2'>
@@ -22,10 +27,13 @@ const SignUp = () => {
               <h2 className='text-5xl font-island leading-none'>
                 Chuks Kitchen
               </h2>
-              <p className='mt-4 text-xl font-semibold'>Chuks Kitchen</p>
+              <p className='mt-4 text-xl font-semibold'>
+                Chuks Kitchen
+              </p>
               <p className='mt-2 text-base leading-relaxed'>
-                Your journey to delicious, authentic Nigerian meals starts
-                here. Sign up or log in to order your favorites today!
+                Your journey to delicious, authentic Nigerian meals
+                starts here. Sign up or log in to order your favorites
+                today!
               </p>
             </div>
           </div>
@@ -94,11 +102,25 @@ const SignUp = () => {
                   <Lock size={16} className='text-dark-gray' />
                   <input
                     id='password'
-                    type='password'
+                    type={showPassword ? 'text' : 'password'}
                     placeholder='QWE123#'
                     className='w-full bg-transparent text-sm text-charcoal outline-none'
                   />
-                  <EyeOff size={16} className='text-dark-gray' />
+
+                  <button
+                    type='button'
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    className='text-dark-gray'
+                    aria-label={
+                      showPassword ? 'Hide password' : 'Show password'
+                    }
+                  >
+                    {showPassword ? (
+                      <Eye size={16} />
+                    ) : (
+                      <EyeOff size={16} />
+                    )}
+                  </button>
                 </div>
               </div>
 
@@ -113,11 +135,28 @@ const SignUp = () => {
                   <Lock size={16} className='text-dark-gray' />
                   <input
                     id='confirm-password'
-                    type='password'
+                    type={showConfirmPassword ? 'text' : 'password'}
                     placeholder='QWE123#'
                     className='w-full bg-transparent text-sm text-charcoal outline-none'
                   />
-                  <EyeOff size={16} className='text-dark-gray' />
+                  <button
+                    type='button'
+                    onClick={() =>
+                      setShowConfirmPassword((prev) => !prev)
+                    }
+                    className='text-dark-gray'
+                    aria-label={
+                      showConfirmPassword
+                        ? 'Hide password'
+                        : 'Show password'
+                    }
+                  >
+                    {showConfirmPassword ? (
+                      <Eye size={16} />
+                    ) : (
+                      <EyeOff size={16} />
+                    )}
+                  </button>
                 </div>
               </div>
 
@@ -129,7 +168,7 @@ const SignUp = () => {
                 />
                 <span>
                   I agree to the{' '}
-                  <span className='text-primary-blue'>
+                  <span className='text-primary-blue hover:text-soft-blue'>
                     Terms &amp; Conditions and Privacy Policy
                   </span>
                 </span>
@@ -156,7 +195,9 @@ const SignUp = () => {
                   type='button'
                   className='flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white py-3 text-sm text-charcoal'
                 >
-                  <span className='font-bold text-primary-orange'>G</span>
+                  <span className='font-bold text-primary-orange'>
+                    G
+                  </span>
                   Continue with Google
                 </button>
 
@@ -164,7 +205,9 @@ const SignUp = () => {
                   type='button'
                   className='flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white py-3 text-sm text-charcoal'
                 >
-                  <span className='font-bold text-primary-blue'>f</span>
+                  <span className='font-bold text-primary-blue'>
+                    f
+                  </span>
                   Continue with Apple
                 </button>
               </div>
@@ -172,7 +215,10 @@ const SignUp = () => {
 
             <p className='mt-4 text-center text-xs text-dark-gray'>
               Already have an account?{' '}
-              <Link to='/sign-in' className='text-primary-blue'>
+              <Link
+                to='/sign-in'
+                className='text-primary-blue hover:text-soft-blue'
+              >
                 Sign In
               </Link>
             </p>
