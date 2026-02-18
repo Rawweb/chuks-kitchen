@@ -84,7 +84,7 @@ const Cart = () => {
 
   return (
     <section className='py-32 px-4'>
-      <div className='container max-w-4xl bg-white rounded-sm p-4 sm:p-5'>
+      <div className='container mx-auto max-w-4xl bg-white rounded-sm p-4 sm:p-6 shadow-md'>
         <h1 className='text-2xl font-bold mb-4'>Your Cart</h1>
 
         {/* Desktop View */}
