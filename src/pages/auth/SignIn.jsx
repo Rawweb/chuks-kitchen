@@ -44,7 +44,7 @@ const SignIn = () => {
                 Chuks Kitchen
               </Link>
               <h1 className='mt-2 text-3xl md:text-4xl font-semibold text-charcoal'>
-                Create Your Account
+                Login your account
               </h1>
             </div>
 

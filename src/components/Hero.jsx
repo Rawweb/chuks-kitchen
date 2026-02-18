@@ -38,12 +38,21 @@ const Hero = () => {
               Handcrafted with passion, delivered with care.
             </p>
 
-            <Link
-              to='/welcome'
-              className='bg-primary-orange rounded-md px-5 py-2 text-sm md:text-base text-white font-medium hover:bg-soft-orange transition-colors inline-block'
-            >
-              Discover what's new
-            </Link>
+            <div className='flex flex-wrap items-center gap-3'>
+              <Link
+                to='/welcome'
+                className='bg-primary-orange rounded-md px-5 py-2 text-sm md:text-base text-white font-medium hover:bg-soft-orange transition-colors inline-block'
+              >
+                Discover what's new
+              </Link>
+
+              <Link
+                to='/cart'
+                className='border border-white rounded-md px-5 py-2 text-sm md:text-base text-white font-medium hover:bg-white hover:text-charcoal transition-colors inline-block'
+              >
+                Go to Cart
+              </Link>
+            </div>
           </div>
         </div>
       </div>

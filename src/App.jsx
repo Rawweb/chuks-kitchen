@@ -9,10 +9,12 @@ import UserLayout from './layouts/UserLayout';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
 import FoodDetails from './pages/FoodDetails';
+import Cart from './pages/Cart';
 import AuthLayout from './layouts/AuthLayout';
 import SignIn from './pages/auth/SignIn';
 import SignUp from './pages/auth/SignUp';
 import Welcome from './pages/auth/Welcome';
+import Order from './pages/Order';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,6 +36,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/food-details/:id" element={<FoodDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/my-orders" element={<Order />} />
         </Route>
 
         {/* Auth */}
