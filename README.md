@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-🔗 [View Live Project](https://raw-chukskitchen.netlify.app/)
+🔗 [View Live Project](https://chuks-kitchen-pearl.vercel.app/)
 
 ## Project Overview
 
@@ -330,5 +330,5 @@ The navbar layout was also improved beyond the Figma structure to enhance alignm
 
 ## Live Demo
 
-🔗 [View Live Project](https://raw-chukskitchen.netlify.app/)
+🔗 [View Live Project](https://chuks-kitchen-pearl.vercel.app/)
 
