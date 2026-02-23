@@ -4,5 +4,6 @@ import taitlwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/chuks-kitchen/',
   plugins: [react(), taitlwindcss()],
 });

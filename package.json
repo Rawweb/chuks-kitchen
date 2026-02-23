@@ -2,6 +2,7 @@
   "name": "chuks-kitchen",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://rawweb.github.io/chuks-kitchen",
   "type": "module",
   "scripts": {
     "dev": "vite",
