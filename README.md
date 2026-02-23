@@ -1,4 +1,9 @@
 # Chuks Kitchen – Frontend Implementation
+
+## Live Demo
+
+🔗 [View Live Project](https://raw-chukskitchen.netlify.app/)
+
 ## Project Overview
 
 This project is a frontend implementation of the Chuks Kitchen Food Ordering Interface, built as part of the TrueMinds Innovations internship deliverable.
@@ -322,4 +327,8 @@ The navbar layout was also improved beyond the Figma structure to enhance alignm
 ### For production build:
 * npm run build
 * npm run preview
+
+## Live Demo
+
+🔗 [View Live Project](https://raw-chukskitchen.netlify.app/)
 
