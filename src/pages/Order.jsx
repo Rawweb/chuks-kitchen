@@ -1,3 +1,7 @@
+import { CreditCard, X } from 'lucide-react';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 const orderSummary = [
   { label: 'Subtotal', extra: '₦9,200' },
   { label: 'Delivery Fee', extra: '₦500' },
@@ -6,9 +10,22 @@ const orderSummary = [
 ];
 
 const Order = () => {
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('delivery');
+
   return (
-    <section className='min-h-screen flex items-center justify-center px-4 pt-24'>
-      <div className='w-full max-w-lg bg-white rounded-sm p-4 sm:p-6 shadow-md'>
+    <section className='min-h-screen flex items-center justify-center px-4 pt-30 md:pt-0 pb-8 md:pb-0'>
+      <div className='relative w-full max-w-lg bg-white rounded-sm p-4 sm:p-6 shadow-md'>
+        {/* Top-right close button */}
+        <button
+          type='button'
+          onClick={() => navigate(-1)}
+          className='absolute top-8 right-6 bg-black px-1 py-0.5 rounded-md text-white hover:opacity-70 transition'
+          aria-label='Close order summary'
+        >
+          <X size={18} />
+        </button>
+
         <h1 className='text-xl md:text-2xl font-bold'>
           Order Summary
         </h1>
@@ -27,7 +44,7 @@ const Order = () => {
             type='button'
             className='px-4 bg-primary-orange hover:bg-soft-orange transition-colors text-white rounded-md whitespace-nowrap'
           >
-            Login
+            Add
           </button>
         </div>
 
@@ -52,14 +69,16 @@ const Order = () => {
 
         <div className='mt-4 grid grid-cols-2 overflow-hidden rounded-md'>
           <button
+            onClick={() => setActiveTab('delivery')}
             type='button'
-            className='bg-primary-orange hover:bg-soft-orange text-white py-3'
+            className={`transition-colors text-white py-3 ${activeTab === 'delivery' ? 'bg-primary-orange' : 'bg-muted-gray hover:bg-dark-gray'}`}
           >
             Delivery
           </button>
           <button
+            onClick={() => setActiveTab('pick-up')}
             type='button'
-            className='bg-muted-gray text-white py-3 transition-colors'
+            className={`transition-colors text-white py-3 ${activeTab === 'pick-up' ? 'bg-primary-orange' : 'bg-muted-gray hover:bg-dark-gray'}`}
           >
             Pick up
           </button>
@@ -75,12 +94,13 @@ const Order = () => {
           className='mt-2 w-full resize-none bg-white border border-muted-gray rounded-md p-3 text-base text-charcoal outline-none'
         />
 
-        <button
-          type='button'
-          className='mt-5 w-full bg-primary-orange hover:bg-soft-orange transition-colors text-white rounded-md py-3'
+        <Link
+          to='/payment'
+          className='inline-flex items-center gap-2 mt-5 w-full justify-center bg-primary-orange hover:bg-soft-orange py-4 text-white rounded-md shadow-md'
         >
-          Proceed to Checkout
-        </button>
+          <CreditCard size={20} />
+          Proceed to checkout
+        </Link>
       </div>
     </section>
   );

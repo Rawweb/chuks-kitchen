@@ -11,8 +11,8 @@ const highlights = [
 
 const Welcome = () => {
   return (
-    <section className='bg-white'>
-      <div className='grid  md:grid-cols-[48%_52%]'>
+    <section className='min-h-screen bg-white'>
+      <div className='grid md:grid-cols-[48%_52%]'>
         {/* Left image panel */}
         <div className='relative h-72 md:h-auto p-6 md:p-0'>
           <img

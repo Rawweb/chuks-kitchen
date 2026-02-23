@@ -15,6 +15,9 @@ import SignIn from './pages/auth/SignIn';
 import SignUp from './pages/auth/SignUp';
 import Welcome from './pages/auth/Welcome';
 import Order from './pages/Order';
+import Payment from './pages/Payment';
+import Confirmed from './pages/Confirmed';
+import Account from './pages/Account';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -38,6 +41,9 @@ const App = () => {
           <Route path="/food-details/:id" element={<FoodDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/my-orders" element={<Order />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/confirmed" element={<Confirmed />} />
+          <Route path="/account" element={<Account />} />
         </Route>
 
         {/* Auth */}

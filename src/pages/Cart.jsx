@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Minus, X } from 'lucide-react';
+import { Plus, Minus, X, ShoppingCart } from 'lucide-react';
 import cartImageOne from '../assets/cart-1.png';
 import cartImageTwo from '../assets/cart-2.png';
 import cartImageThree from '../assets/cart-3.png';
@@ -90,25 +90,14 @@ const Cart = () => {
         {/* Desktop View */}
         <div className='space-y-2 hidden md:block'>
           {cartItems.map((item) => (
-            <div
-              key={item.id}
-              className='border border-soft-gray p-2 sm:p-3 flex items-center gap-3 sm:gap-4'
-            >
+            <div key={item.id} className='border border-soft-gray p-2 sm:p-3 flex items-center gap-3 sm:gap-4'>
               {/* Image */}
-              <img
-                src={item.image}
-                alt={item.name}
-                className='w-20 h-20 sm:w-24 sm:h-24 object-cover rounded'
-              />
+              <img src={item.image} alt={item.name} className='w-20 h-20 sm:w-24 sm:h-24 object-cover rounded' />
 
               {/* Title + Description */}
               <div className='flex-1 min-w-0'>
-                <h2 className='text-base md:text-xl font-bold text-black'>
-                  {item.name}
-                </h2>
-                <p className='text-xs md:text-base text-dark-gray'>
-                  {item.note}
-                </p>
+                <h2 className='text-base md:text-xl font-bold text-black'>{item.name}</h2>
+                <p className='text-xs md:text-base text-dark-gray'>{item.note}</p>
               </div>
 
               {/* Increas and Decrease Button */}
@@ -122,9 +111,7 @@ const Cart = () => {
                   <Minus size={18} />
                 </button>
 
-                <span className='text-2xl font-bold'>
-                  {item.quantity}
-                </span>
+                <span className='text-2xl font-bold'>{item.quantity}</span>
 
                 <button
                   type='button'
@@ -138,9 +125,7 @@ const Cart = () => {
 
               {/* Price + Button */}
               <div className='flex items-center gap-10'>
-                <p className='text-primary-orange font-bold text-xs sm:text-lg w-20 sm:w-24 text-right'>
-                  ₦{item.price}
-                </p>
+                <p className='text-primary-orange font-bold text-xs sm:text-lg w-20 sm:w-24 text-right'>₦{item.price}</p>
 
                 <button
                   type='button'
@@ -158,28 +143,17 @@ const Cart = () => {
         {/* Mobile View */}
         <div className='space-y-4 md:hidden'>
           {cartItems.map((item) => (
-            <div
-              key={item.id}
-              className='border border-soft-gray p-3 flex items-center gap-4'
-            >
+            <div key={item.id} className='border border-soft-gray p-3 flex items-center gap-4'>
               {/* Image */}
-              <img
-                src={item.image}
-                alt={item.name}
-                className='w-26 h-30 object-cover rounded'
-              />
+              <img src={item.image} alt={item.name} className='w-26 h-30 object-cover rounded' />
 
               <div className='flex flex-col justify-between flex-1'>
                 {/* Top Row: Title + Quantity */}
                 <div className='flex justify-between items-start gap-4'>
                   {/* Title + Description */}
                   <div>
-                    <h2 className='text-base font-bold text-black'>
-                      {item.name}
-                    </h2>
-                    <p className='text-xs text-dark-gray'>
-                      {item.note}
-                    </p>
+                    <h2 className='text-base font-bold text-black'>{item.name}</h2>
+                    <p className='text-xs text-dark-gray'>{item.note}</p>
                   </div>
                 </div>
 
@@ -194,9 +168,7 @@ const Cart = () => {
                     <Minus size={14} />
                   </button>
 
-                  <span className='text-lg font-bold'>
-                    {item.quantity}
-                  </span>
+                  <span className='text-lg font-bold'>{item.quantity}</span>
 
                   <button
                     type='button'
@@ -210,9 +182,7 @@ const Cart = () => {
 
                 {/* Bottom Row: Price + Remove */}
                 <div className='flex items-center mt-4 justify-between'>
-                  <p className='text-primary-orange font-bold text-lg'>
-                    ₦{item.price}
-                  </p>
+                  <p className='text-primary-orange font-bold text-lg'>₦{item.price}</p>
 
                   <button
                     type='button'
@@ -228,13 +198,23 @@ const Cart = () => {
           ))}
         </div>
 
-        <Link
-          to='/explore'
-          className='mt-4 inline-flex items-center gap-2 text-primary-blue hover:text-soft-blue hover:underline text-sm'
-        >
-          <Plus size={14} />
-          Add more items from Chuks Kitchen
-        </Link>
+        <div className='flex items-center mt-4 gap-5 justify-between'>
+          <Link
+            to='/explore'
+            className='inline-flex items-center gap-2 text-primary-blue hover:text-soft-blue hover:underline text-sm'
+          >
+            <Plus size={14} />
+            Add more items from Chuks Kitchen
+          </Link>
+
+          <Link
+            to='/my-orders'
+            className='inline-flex items-center gap-2 bg-primary-orange hover:bg-soft-orange px-4 py-2 text-white rounded-md shadow-md text-sm'
+          >
+            <ShoppingCart size={14}/>
+            Order Summary
+          </Link>
+        </div>
       </div>
     </section>
   );
