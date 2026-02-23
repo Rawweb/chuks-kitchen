@@ -12,9 +12,9 @@ const highlights = [
 const Welcome = () => {
   return (
     <section className='min-h-screen bg-white'>
-      <div className='grid md:grid-cols-[48%_52%]'>
+      <div className='grid min-h-screen md:grid-cols-[48%_52%]'>
         {/* Left image panel */}
-        <div className='relative h-72 md:h-auto p-6 md:p-0'>
+        <div className='relative h-full md:h-auto p-6 md:p-0'>
           <img
             src={signInImage}
             alt='Family enjoying Nigerian food together'

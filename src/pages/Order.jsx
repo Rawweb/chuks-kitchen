@@ -20,7 +20,7 @@ const Order = () => {
         <button
           type='button'
           onClick={() => navigate(-1)}
-          className='absolute top-8 right-6 bg-black px-1 py-0.5 rounded-md text-white hover:opacity-70 transition'
+          className='absolute top-5.5 right-4 md:top-8 md:right-6 bg-black px-1 py-0.5 rounded-md text-white hover:opacity-70 transition'
           aria-label='Close order summary'
         >
           <X size={18} />

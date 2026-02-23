@@ -59,32 +59,49 @@ Used for clean and lightweight icons such as the mobile menu toggle in the Navba
 Configured to enforce code consistency and maintain readable structure.
 
 ## Project Structure
+## Project Structure
+
+```
 src/
 │
-├── assets/              # Images downloaded from Figma and renamed properly
+├── assets/                 # Images downloaded from Figma and renamed properly
 │
-├── components/          # Reusable UI components
-│   ├── Navbar.jsx
+├── components/             # Reusable UI components
+├   ├── ExploreHero.jsx
 │   ├── Footer.jsx
+│   ├── Hero.jsx
+│   ├── MealCard.jsx
+│   ├── Navbar.jsx
 │
-├── layouts/             # Layout wrappers
+├── constants/
+│   ├── mealsDetails.js
+│
+├── layouts/                # Layout wrappers
 │   ├── AuthLayout.jsx
 │   ├── UserLayout.jsx
 │
 ├── pages/
-│   ├── auth/            # Authentication-related screens
+│   ├── auth/               # Authentication-related screens
 │   │   ├── SignIn.jsx
 │   │   ├── SignUp.jsx
 │   │   ├── Welcome.jsx
-│   │
+│   ├── sections/
+|   |   ├── ChefsSpecialSection.jsx
+│   |   ├── PopularCategories.jsx
+│   |
 │   ├── Home.jsx
 │   ├── Explore.jsx
-│   ├── Account.jsx
+│   ├── Cart.jsx
 │   ├── Order.jsx
+│   ├── Payment.jsx
+│   ├── Confirmed.jsx
+│   ├── FoodDetails.jsx
+│   ├── Account.jsx
 │
-├── App.jsx              # Route configuration
-├── main.jsx             # Application entry point
-├── index.css            # Global styles and theme variables
+├── App.jsx                 # Route configuration
+├── main.jsx                # Application entry point
+├── index.css               # Global styles and theme variables
+```
 
 
 ## Architectural Decisions
@@ -124,7 +141,7 @@ Instead of replicating that exact misalignment, the navbar was improved for bett
 
 * Logo aligned left
 
-* Navigation links centered on desktop
+* Navigation links centered on desktop - cart missing on navigation links, added it for easy navigation to cart across all pages
 
 * Login button aligned right
 
@@ -133,6 +150,116 @@ Instead of replicating that exact misalignment, the navbar was improved for bett
 * Responsive collapse behavior added for smaller screens
 
 This decision maintains design intent while improving visual hierarchy and usability.
+
+## Hero Section Improvement
+
+* Added the cart buttoon next to the Discover what's new button for better ui
+
+## Explore Page – Desktop vs Mobile Filtering
+
+In the Figma design, menu categories are visually lists.
+
+In this implementation:
+### Desktop Behavior
+
+* Menu categories are visually presented as cards - this card-based layout works well because there is enough horizontal space to display multiple category options clearly.
+
+* Clicking a category dynamically filters the products.
+
+* This preserves visual clarity and improves discoverability.
+
+* The card style supports visual scanning and aligns with the grid-based layout.
+
+### Mobile Behavior
+On smaller screens, the card-based filtering was replaced with a select-style dropdown.
+
+#### Reasoning:
+
+* Mobile screens have limited horizontal space.
+
+* Stacking large category cards vertically would increase scroll depth unnecessarily.
+
+* A dropdown reduces visual clutter and keeps the interface compact.
+
+* It improves usability by allowing quick selection without overwhelming the layout.
+
+This decision maintains the design intent while adapting the interaction pattern for smaller devices.
+
+## Cart Page Improvement
+
+On the Cart page, an Order Summary button was added.
+
+This was not strongly emphasized in the Figma design, but was implemented intentionally to improve usability.
+
+### Reason:
+
+* Reduces friction in the checkout flow.
+
+* Allows users to move directly from cart items to summary.
+
+* Improves clarity in navigation hierarchy.
+
+* This creates a clearer progression:
+
+* Cart ---> Order Summary ---> Payment ---> Confirmation
+
+## Order Page and Payment Page Navigation
+
+An “X” close button was added to both:
+
+* Orders page
+
+* Payment page
+
+Behavior:
+* Clicking the X navigates back one page using navigation history.
+
+Reasoning:
+* Improves user control.
+
+* Reduces dependency on browser back button.
+
+* Aligns with modal-style UI behavior.
+
+* Provides a predictable escape pattern.
+
+This enhances user experience without changing core design structure.
+
+## Confirmation Page Adjustment
+
+The original Figma confirmation screen did not include a structured container box.
+
+In this implementation:
+* A centered container box was added.
+
+* Visual consistency was maintained with the Payment and Order pages.
+
+Reason:
+* Maintains consistency across checkout flow.
+
+* Avoids abrupt layout shift between steps.
+
+This decision prioritizes design consistency across related screens.
+
+## Authentication Pages Adjustment
+
+On:
+* Welcome page
+
+* Sign In page
+
+* Sign Up page
+
+The Footer component was intentionally removed.
+
+Reason:
+* Authentication screens should remain distraction-free.
+
+* Footer links are unnecessary during login or registration.
+
+* Keeps user focused on the primary action.
+
+This separation was handled through *AuthLayout*, which excludes Navbar and Footer.
 
 ## Assumptions Made
 
@@ -176,9 +303,19 @@ Further screen responsiveness will continue as additional pages are completed.
 
 * Refine typography scaling across devices
 
+* Implement proper form validation on payment and auth forms.
+
+* Add loading states and error handling.
+
+* Improve accessibility support including keyboard navigation.
+
+* Introduce unit testing for key components.
+
 The navbar layout was also improved beyond the Figma structure to enhance alignment consistency and user experience.
 
 ## How to Run the Project
+
+### For development build:
 * npm install
 * npm run dev
 

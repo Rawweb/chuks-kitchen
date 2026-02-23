@@ -8,7 +8,7 @@ const SignIn = () => {
 
   return (
     <section className='min-h-screen bg-soft-gray'>
-      <div className='grid md:grid-cols-2'>
+      <div className='grid min-h-screen md:grid-cols-2'>
         {/* Desktop left panel */}
         <div className='relative hidden md:block'>
           <img
