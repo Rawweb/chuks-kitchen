@@ -31,8 +31,8 @@ This implementation focuses strictly on frontend architecture and UI reproductio
 React was used for component-based architecture and UI composition.
 Vite was chosen for fast development build time and optimized production bundling.
 
-2. Tailwind CSS v4
-Tailwind was used for styling.
+2. Tailwind CSS v4 
+- Tailwind was used for styling.
 Instead of writing custom CSS files for every component, utility classes were used to:
 
 * Maintain consistent spacing
@@ -46,7 +46,7 @@ Instead of writing custom CSS files for every component, utility classes were us
 Reusable color variables were defined in index.css based on the Figma color palette.
 
 3. React Router DOM (v7)
-Used for client-side routing.
+- Used for client-side routing.
 The application is structured with:
 
 * UserLayout for main application pages
@@ -63,7 +63,6 @@ Used for clean and lightweight icons such as the mobile menu toggle in the Navba
 
 Configured to enforce code consistency and maintain readable structure.
 
-## Project Structure
 ## Project Structure
 
 ```
