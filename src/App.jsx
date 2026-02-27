@@ -18,6 +18,7 @@ import Order from './pages/Order';
 import Payment from './pages/Payment';
 import Confirmed from './pages/Confirmed';
 import Account from './pages/Account';
+import ScrollToTopButton from './components/ui/ScrollToTopButon';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,22 +38,25 @@ const App = () => {
         {/* Public */}
         <Route element={<UserLayout />}>
           <Route index element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/food-details/:id" element={<FoodDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/my-orders" element={<Order />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/confirmed" element={<Confirmed />} />
-          <Route path="/account" element={<Account />} />
+          <Route path='/explore' element={<Explore />} />
+          <Route path='/food-details/:id' element={<FoodDetails />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/my-orders' element={<Order />} />
+          <Route path='/payment' element={<Payment />} />
+          <Route path='/confirmed' element={<Confirmed />} />
+          <Route path='/account' element={<Account />} />
         </Route>
 
         {/* Auth */}
         <Route element={<AuthLayout />}>
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/welcome" element={<Welcome />} />
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/welcome' element={<Welcome />} />
         </Route>
       </Routes>
+
+      {/* Floating Scroll Button */}
+      <ScrollToTopButton />
     </Router>
   );
 };
